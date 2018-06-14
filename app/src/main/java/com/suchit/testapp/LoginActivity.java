@@ -10,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class LoginActivity extends AppCompatActivity {
-    
-    String grades [] = {"Select Grade", "4th", "5th","6th", "7th", "8th", "9th", "10th"};
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
@@ -22,10 +20,11 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        Spinner mySpinner = findViewById(R.id.grade);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                R.layout.spinner_layout, R.id.gradeText, grades);
-        mySpinner.setAdapter(adapter);
+        Spinner spinner = findViewById(R.id.grade);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.levels, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
 
     @Override

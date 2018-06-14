@@ -47,9 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/nameLayout"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/black">
-            </Spinner>
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/black"/>
             <android.support.design.widget.TextInputLayout
                 android:theme="@style/InputLayoutTheme"
                 android:id="@+id/emailLayout"
