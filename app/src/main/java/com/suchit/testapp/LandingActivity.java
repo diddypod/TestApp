@@ -5,20 +5,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class LandingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+        ButterKnife.bind(this);
     }
 
-    public void onTestClicked (View view){
+    @OnClick(R.id.takeTest)
+    public void onTestClicked(){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity (intent);
     }
-
-    public void onResultsClicked(View view){
+    @OnClick(R.id.viewResults)
+    public void onResultsClicked(){
     }
 
 }

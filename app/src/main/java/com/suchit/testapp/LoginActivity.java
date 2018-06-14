@@ -9,18 +9,23 @@ import android.view.MenuInflater;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity {
+    @BindView(R.id.loginToolbar) Toolbar toolbar;
+    @BindView(R.id.grade) Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        Toolbar myToolbar = findViewById(R.id.loginToolbar);
-        setSupportActionBar(myToolbar);
+        setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        Spinner spinner = findViewById(R.id.grade);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.levels, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
