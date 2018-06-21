@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LandingActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/blue">
 
     <RelativeLayout
         android:id="@+id/box"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/viewResultsButton"
             android:layout_margin="25dp"
-            android:background="@drawable/bg_button_filled"
+            android:background="@drawable/bg_button_outline"
             android:padding="10dp"
             android:text="Take a Test"
             android:textColor="@color/white" />

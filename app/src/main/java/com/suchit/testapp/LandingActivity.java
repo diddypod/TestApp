@@ -18,7 +18,7 @@ public class LandingActivity extends AppCompatActivity {
 
     @OnClick(R.id.takeTestButton)
     public void onTestClicked(){
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, DetailsActivity.class);
         startActivity (intent);
     }
 

@@ -4,13 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/loginToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:titleTextColor="@color/white"
-        android:elevation="4dp"/>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,6 +79,16 @@
                     android:hint="Parents' Number"
                     android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/submit_details"
+                android:layout_below="@id/numberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/bg_button_outline"
+                android:textColor="@color/darkBlue"
+                android:text="Submit"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

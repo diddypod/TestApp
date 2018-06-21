@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".DetailsActivity"
             android:label="Enter Details"
             android:parentActivityName=".LandingActivity"/>
     </application>
