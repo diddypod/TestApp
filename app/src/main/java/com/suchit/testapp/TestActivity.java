@@ -40,23 +40,19 @@ public class TestActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int pos) {
-            switch(pos) {
-                case 0: return QuestionFragment.newInstance("QuestionFragment, 0");
-                case 1: return QuestionFragment.newInstance("QuestionFragment, 1");
-                case 2: return QuestionFragment.newInstance("QuestionFragment, 2");
-                case 3: return QuestionFragment.newInstance("QuestionFragment, 3");
-                case 4: return QuestionFragment.newInstance("QuestionFragment, 4");
-                default: return QuestionFragment.newInstance("QuestionFragment, Default");
+            if (pos<20) {
+                return QuestionFragment.newInstance("QuestionFragment,"+Integer.toString(pos+1));
             }
+            return QuestionFragment.newInstance("whoopsies");
         }
 
         @Override
         public int getCount() {
-            return 5;
+            return 20;
         }
         @Override
         public CharSequence getPageTitle(int position) {
-            return Integer.toString(position);
+            return Integer.toString(position+1);
         }
 
     }

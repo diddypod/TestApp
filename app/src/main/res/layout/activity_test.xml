@@ -16,6 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            app:tabMode="scrollable"
+            app:tabGravity="center"
+            app:tabMinWidth="100dp"
+            app:tabMaxWidth="100dp"
             app:tabSelectedTextColor="@color/lightBlue"
             app:tabIndicatorColor="@color/lightBlue"
             app:tabTextColor="@color/darkBlue"/>
