@@ -73,7 +73,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/submit_details"
+                android:id="@+id/submit_marks"
                 android:layout_below="@id/english_marks_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
