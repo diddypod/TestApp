@@ -6,10 +6,45 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include
-            layout="@layout/toolbar"
-            android:id="@+id/test_toolbar"/>
-
+        <RelativeLayout
+            android:id="@+id/test_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue"
+            android:elevation="4dp">
+            <ImageButton
+                android:id="@+id/pause_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pause"
+                android:padding="5dp"
+                android:layout_centerVertical="true"/>
+            <TextClock
+                android:id="@+id/clock"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/pause_button"
+                android:layout_toStartOf="@id/end_test_button"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_marginStart="15dp"/>
+            <Button
+                android:id="@+id/end_test_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:textSize="20sp"
+                android:text="END TEST"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+        </RelativeLayout>
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_below="@id/test_toolbar"

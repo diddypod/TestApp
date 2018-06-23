@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.v7.widget.Toolbar
     android:id="@+id/loginToolbar"
     android:layout_width="match_parent"
