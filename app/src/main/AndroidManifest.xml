@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LandingActivity">
+        <activity android:name=".LandingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +19,15 @@
         <activity
             android:name=".DetailsActivity"
             android:label="Enter Details"
-            android:parentActivityName=".LandingActivity"/>
+            android:parentActivityName=".LandingActivity" />
         <activity
             android:name=".ReadyActivity"
+            android:label="Ready"
+            android:parentActivityName=".DetailsActivity" />
+        <activity
+            android:name=".TestActivity"
             android:label="Take Test"
-            android:parentActivityName=".DetailsActivity"/>
+            android:parentActivityName=".DetailsActivity" />
     </application>
 
 </manifest>

@@ -10,8 +10,8 @@ import butterknife.ButterKnife;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
-    Toolbar loginToolbar;
+    @BindView(R.id.details_toolbar)
+    Toolbar detailsToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstance){
@@ -19,7 +19,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         ButterKnife.bind(this);
 
-        setSupportActionBar(loginToolbar);
+        setSupportActionBar(detailsToolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);

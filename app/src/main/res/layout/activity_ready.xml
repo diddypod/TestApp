@@ -121,6 +121,8 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <Button
+            android:id="@+id/start_test"
+            android:onClick="startTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/instruction_layout"
