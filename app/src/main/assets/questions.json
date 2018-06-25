@@ -1,0 +1,28 @@
+{
+    "class": "4",
+    "questions": [
+        {
+            "subject": "science",
+            "image": "true",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "answers": [
+                {
+                    "text": "Option 1",
+                    "correct": "false"
+                },
+                {
+                    "text": "Option 2",
+                    "correct": "true"
+                },
+                {
+                    "text": "Option 3",
+                    "correct": "false"
+                },
+                {
+                    "text": "Option 4",
+                    "correct": "false"
+                }
+            ]
+        }
+    ]
+}
