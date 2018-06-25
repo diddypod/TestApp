@@ -123,12 +123,14 @@
         <Button
             android:id="@+id/start_test"
             android:onClick="startTest"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/instruction_layout"
             android:layout_centerHorizontal="true"
-            android:padding="20dp"
-            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
             android:text="Start test"
             android:textColor="@color/darkBlue"
             android:background="@drawable/bg_button_outline"/>
