@@ -16,13 +16,13 @@ public class LandingActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.takeTestButton)
+    @OnClick(R.id.take_test_button)
     public void onTestClicked(){
         Intent intent = new Intent(this, DetailsActivity.class);
         startActivity (intent);
     }
 
-    @OnClick(R.id.viewResultsButton)
+    @OnClick(R.id.view_results_button)
     public void onResultsClicked(){
     }
 

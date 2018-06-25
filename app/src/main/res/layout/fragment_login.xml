@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginToolbar"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:layout_margin="25dp"
         app:cardCornerRadius="4dp">
 
@@ -16,7 +17,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/enterDetails"
+                android:id="@+id/enter_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
@@ -25,15 +26,15 @@
                 android:textSize="20sp" />
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/nameLayout"
+                android:id="@+id/name_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/enterDetails"
+                android:layout_below="@id/enter_details"
                 android:layout_margin="10dp"
                 android:theme="@style/InputLayoutTheme">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/nameText"
+                    android:id="@+id/name_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Student Name"
@@ -44,12 +45,12 @@
                 android:id="@+id/grade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/nameLayout"
+                android:layout_below="@id/name_layout"
                 android:layout_margin="10dp"
                 android:backgroundTint="@color/black" />
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/emailLayout"
+                android:id="@+id/email_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/grade"
@@ -57,7 +58,7 @@
                 android:theme="@style/InputLayoutTheme">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/emailText"
+                    android:id="@+id/email_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Parents' email"
@@ -65,15 +66,15 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/numberLayout"
+                android:id="@+id/number_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/emailLayout"
+                android:layout_below="@id/email_layout"
                 android:layout_margin="10dp"
                 android:theme="@style/InputLayoutTheme">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/numberText"
+                    android:id="@+id/number_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Parents' Number"
@@ -82,7 +83,7 @@
 
             <Button
                 android:id="@+id/submit_details"
-                android:layout_below="@id/numberLayout"
+                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
@@ -91,5 +92,8 @@
                 android:text="Submit"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
