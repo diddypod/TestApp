@@ -10,8 +10,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.suchit.testapp.Test.currentTest;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -39,9 +43,9 @@ public class TestActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int pos) {
             if (pos<20) {
-                return QuestionFragment.newInstance("QuestionFragment,"+Integer.toString(pos+1));
+                return QuestionFragment.newInstance(currentTest.getQuestions().get(0).toArrayList());
             }
-            return QuestionFragment.newInstance("whoopsies");
+            return QuestionFragment.newInstance(new ArrayList<String>());
         }
 
         @Override

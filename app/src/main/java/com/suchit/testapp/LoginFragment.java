@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.suchit.testapp.Test.currentTest;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
@@ -52,6 +56,29 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view){
+        String name = nameText.getText().toString();
+        String email = emailText.getText().toString();
+        String phone = numberText.getText().toString();
+        long grade = gradeSpinner.getSelectedItemId();
+        if (name.isEmpty()){
+            nameText.setError("Please enter name");
+            return;
+        }
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            emailText.setError("Please enter valid email");
+            return;
+        }
+        if (phone.isEmpty() || !Patterns.PHONE.matcher(phone).matches()){
+            numberText.setError("Please enter valid phone number");
+            return;
+        }
+        if (grade == 0){
+            Toast.makeText(getActivity().getApplicationContext(), "Please select a grade.",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+        currentTest.setLoginDetails(name, email, phone, grade);
+
         MarksFragment marksFragment = new MarksFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.details_fragment, marksFragment);

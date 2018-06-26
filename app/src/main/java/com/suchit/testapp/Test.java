@@ -1,13 +1,75 @@
 package com.suchit.testapp;
 
+import android.content.Context;
+import android.support.annotation.Nullable;
+import android.util.Log;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
+
 public class Test {
-    String name;
-    String email;
-    String phone;
+    public static Test currentTest;
 
-    int grade;
+    private String name;
+    private String email;
+    private String phone;
 
-    float math_marks;
-    float science_marks;
-    float english_marks;
+    private int grade;
+
+    private float mathMarks;
+    private float scienceMarks;
+    private float englishMarks;
+
+    private ArrayList<Question> questions = new ArrayList<>();
+
+    public void setLoginDetails(String name, String email, String phone, long grade) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.grade = (int) grade;
+    }
+
+    public void setMarks(float mathMarks, float scienceMarks, float englishMarks) {
+        this.mathMarks = mathMarks;
+        this.scienceMarks = scienceMarks;
+        this.englishMarks = englishMarks;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setQuestions(Context context) {
+        JsonArray jsonArray = getQuestionsFromJson(context).getAsJsonArray("questions");
+        for (JsonElement jsonElement : jsonArray) {
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            questions.add(new Question(jsonObject));
+        }
+    }
+    @Nullable
+    private JsonObject getQuestionsFromJson(Context context) {
+        try (InputStream is = context.getAssets().open("questions.json")) {
+            JsonParser parser = new JsonParser();
+            return parser.parse(new InputStreamReader(is)).getAsJsonObject();
+        } catch (Exception e) {
+            Log.e(TAG, e.getMessage(), e);
+        }
+        return null;
+    }
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
 }
