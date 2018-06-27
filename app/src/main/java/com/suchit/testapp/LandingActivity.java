@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.suchit.testapp.data.Test;
+import com.suchit.testapp.detail.DetailsActivity;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.suchit.testapp.Test.currentTest;
+import static com.suchit.testapp.data.Test.currentTest;
 
 public class LandingActivity extends AppCompatActivity {
 

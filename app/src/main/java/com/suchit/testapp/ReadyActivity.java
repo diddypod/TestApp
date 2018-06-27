@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+
+import com.suchit.testapp.test.TestActivity;
 
 import butterknife.OnClick;
 
-import static com.suchit.testapp.Test.currentTest;
+import static com.suchit.testapp.data.Test.currentTest;
 
 public class ReadyActivity extends AppCompatActivity {
 

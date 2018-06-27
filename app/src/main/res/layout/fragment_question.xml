@@ -27,36 +27,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"/>
-            <RadioGroup
+            <RelativeLayout
                 android:layout_weight="4"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="10dp">
-                <RadioButton
-                    android:id="@+id/option_a"
+                android:layout_height="0dp">
+                <RadioGroup
+                    android:id="@+id/radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/blue"
-                    android:layout_margin="5dp"/>
-                <RadioButton
-                    android:id="@+id/option_b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/blue"
-                    android:layout_margin="5dp"/>
-                <RadioButton
-                    android:id="@+id/option_c"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/blue"
-                    android:layout_margin="5dp"/>
-                <RadioButton
-                    android:id="@+id/option_d"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/blue"
-                    android:layout_margin="5dp"/>
-            </RadioGroup>
+                    android:layout_margin="10dp"
+                    android:layout_alignParentBottom="true">
+                    <RadioButton
+                        android:id="@+id/option_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/blue"
+                        android:layout_margin="5dp"/>
+                    <RadioButton
+                        android:id="@+id/option_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/blue"
+                        android:layout_margin="5dp"/>
+                    <RadioButton
+                        android:id="@+id/option_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/blue"
+                        android:layout_margin="5dp"/>
+                    <RadioButton
+                        android:id="@+id/option_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/blue"
+                        android:layout_margin="5dp"/>
+                </RadioGroup>
+            </RelativeLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

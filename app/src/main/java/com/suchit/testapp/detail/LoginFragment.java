@@ -1,4 +1,4 @@
-package com.suchit.testapp;
+package com.suchit.testapp.detail;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,10 +15,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.suchit.testapp.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.suchit.testapp.Test.currentTest;
+import static com.suchit.testapp.data.Test.currentTest;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 

@@ -1,9 +1,11 @@
-package com.suchit.testapp;
+package com.suchit.testapp.detail;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.suchit.testapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -17,17 +17,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailsActivity"
+            android:name=".detail.DetailsActivity"
             android:label="Enter Details"
             android:parentActivityName=".LandingActivity" />
         <activity
             android:name=".ReadyActivity"
             android:label="Ready"
-            android:parentActivityName=".DetailsActivity" />
+            android:parentActivityName=".detail.DetailsActivity" />
         <activity
-            android:name=".TestActivity"
+            android:name=".test.TestActivity"
             android:label="Take Test"
-            android:parentActivityName=".DetailsActivity" />
+            android:parentActivityName=".detail.DetailsActivity" />
+        <activity
+            android:name=".result.ResultActivity"
+            android:label="See Results"
+            android:parentActivityName=".test.TestActivity" />
     </application>
 
 </manifest>

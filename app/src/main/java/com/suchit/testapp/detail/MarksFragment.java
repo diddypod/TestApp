@@ -1,4 +1,4 @@
-package com.suchit.testapp;
+package com.suchit.testapp.detail;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.suchit.testapp.R;
+import com.suchit.testapp.ReadyActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.suchit.testapp.Test.currentTest;
+import static com.suchit.testapp.data.Test.currentTest;
 
 public class MarksFragment extends Fragment implements View.OnClickListener{
 

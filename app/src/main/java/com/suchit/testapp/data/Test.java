@@ -1,4 +1,4 @@
-package com.suchit.testapp;
+package com.suchit.testapp.data;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -23,6 +23,7 @@ public class Test {
     private String phone;
 
     private int grade;
+    private int numberAnswered = 0;
 
     private float mathMarks;
     private float scienceMarks;

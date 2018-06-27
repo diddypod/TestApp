@@ -1,4 +1,4 @@
-package com.suchit.testapp;
+package com.suchit.testapp.data;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -11,6 +11,7 @@ public class Question {
     public class Option {
         String optionText;
         boolean isCorrect;
+        boolean chosen = false;
 
         Option(String text, boolean correct) {
             optionText = text;
@@ -28,13 +29,21 @@ public class Question {
             }
             return values;
         }
+
+        public void setChosen() {
+            this.chosen = true;
+        }
+        public boolean isCorrect() {
+            return isCorrect;
+        }
     }
 
     private String subject;
     private String questionText;
-
-    private boolean hasImage = false;
     private String imagePath = null;
+
+    private boolean hasImage;
+    private boolean answered = false;
 
     private ArrayList<Option> options = new ArrayList<>();
 
@@ -43,7 +52,7 @@ public class Question {
         questionText = jsonObject.get("text").getAsString();
         hasImage = jsonObject.get("image").getAsBoolean();
         if (hasImage) {
-            imagePath = jsonObject.get("imagePath").getAsString();
+            imagePath = jsonObject.get("imageName").getAsString();
         }
         JsonArray answersJsonArray = jsonObject.get("answers").getAsJsonArray();
         for (JsonElement element : answersJsonArray) {
@@ -54,20 +63,9 @@ public class Question {
         }
     }
 
-    public String getQuestionText() {
-        return questionText;
-    }
-    public boolean hasImage() {
-        return hasImage;
-    }
-    public String getImagePath() {
-        return imagePath;
-    }
-    public ArrayList<Option> getOptions() {
-        return options;
-    }
     public ArrayList<String> toArrayList(){
         ArrayList<String> values = new ArrayList<>();
+        values.add("");
         values.add(questionText);
         if (hasImage){
             values.add("true");
@@ -81,5 +79,15 @@ public class Question {
             values.addAll(options.get(i).toArrayList());
         }
         return values;
+    }
+
+    public ArrayList<Option> getOptions() {
+        return options;
+    }
+
+    public void resetOptions(){
+        for (Option i: options){
+            i.chosen = false;
+        }
     }
 }
