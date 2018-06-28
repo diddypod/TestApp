@@ -42,7 +42,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/blue"
-                        android:layout_margin="5dp"/>
+                        android:layout_margin="5dp"
+                        android:checked="true"/>
                     <RadioButton
                         android:id="@+id/option_b"
                         android:layout_width="match_parent"
