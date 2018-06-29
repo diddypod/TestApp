@@ -14,25 +14,15 @@ import butterknife.ButterKnife;
 
 public class ProfileFragment extends Fragment {
 
-    @BindView(R.id.profile_text)
-    TextView textView;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this, view);
 
-        String text = getArguments().getString("msg");
-        textView.setText(text);
-
         return view;
     }
 
     public static ProfileFragment newInstance(String text) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-        fragment.setArguments(b);
-        return fragment;
+        return new ProfileFragment();
     }
 }

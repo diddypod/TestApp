@@ -42,13 +42,13 @@ public class ResultActivity extends AppCompatActivity {
         public Fragment getItem(int pos) {
             switch (pos){
                 case 0:
-                    return OverviewFragment.newInstance("Overview");
+                    return OverviewFragment.newInstance();
                 case 1:
-                    return SectionFragment.newInstance("Sections");
+                    return SectionFragment.newInstance();
                 case 2:
-                    return ProfileFragment.newInstance("Profile");
+                    return ProfileFragment.newInstance();
                 case 3:
-                    return SummaryFragment.newInstance("Summary");
+                    return SummaryFragment.newInstance();
                 default:
                     return null;
             }

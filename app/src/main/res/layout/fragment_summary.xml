@@ -17,6 +17,8 @@
                 android:id="@+id/summary_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Secrion 4 - Summary"
+                android:textSize="25sp"
                 android:layout_gravity="center"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>

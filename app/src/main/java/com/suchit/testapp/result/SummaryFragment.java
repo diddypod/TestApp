@@ -14,25 +14,15 @@ import butterknife.ButterKnife;
 
 public class SummaryFragment extends Fragment {
 
-    @BindView(R.id.summary_text)
-    TextView textView;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_summary, container, false);
         ButterKnife.bind(this, view);
 
-        String text = getArguments().getString("msg");
-        textView.setText(text);
-
         return view;
     }
 
     public static SummaryFragment newInstance(String text) {
-        SummaryFragment fragment = new SummaryFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-        fragment.setArguments(b);
-        return fragment;
+        return new SummaryFragment();
     }
 }
