@@ -24,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.suchit.testapp.data.Result.currentResult;
 import static com.suchit.testapp.data.Test.currentTest;
 
 public class TestActivity extends AppCompatActivity {
@@ -99,9 +100,9 @@ public class TestActivity extends AppCompatActivity {
                 "YES",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        currentResult.evaluateTest(currentTest);
                         Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                         getBaseContext().startActivity (intent);
-
                     }
                 });
         final AlertDialog alertDialog = builder.create();

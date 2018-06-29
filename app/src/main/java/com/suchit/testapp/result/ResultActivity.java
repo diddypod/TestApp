@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.suchit.testapp.R;
 import com.suchit.testapp.test.QuestionFragment;
@@ -22,6 +24,9 @@ public class ResultActivity extends AppCompatActivity {
 
     @BindView(R.id.result_pager)
     ViewPager pager;
+    @BindView(R.id.result_toolbar)
+    Toolbar resultToolbar;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,11 @@ public class ResultActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+
+        setSupportActionBar(resultToolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
     }
 
 
