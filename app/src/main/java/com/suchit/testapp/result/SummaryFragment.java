@@ -5,11 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.suchit.testapp.R;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SummaryFragment extends Fragment {
@@ -22,7 +20,7 @@ public class SummaryFragment extends Fragment {
         return view;
     }
 
-    public static SummaryFragment newInstance(String text) {
+    public static SummaryFragment newInstance() {
         return new SummaryFragment();
     }
 }
