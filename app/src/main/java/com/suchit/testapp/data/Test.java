@@ -73,4 +73,13 @@ public class Test {
     public ArrayList<Question> getQuestions() {
         return questions;
     }
+
+    public boolean allDone(){
+        for (Question question: questions){
+            if (!question.isAnswered()){
+                return false;
+            }
+        }
+        return true;
+    }
 }

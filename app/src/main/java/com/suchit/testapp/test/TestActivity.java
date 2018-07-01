@@ -12,10 +12,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.suchit.testapp.R;
+import com.suchit.testapp.data.Question;
+import com.suchit.testapp.data.Result;
 import com.suchit.testapp.result.ResultActivity;
 
 import java.util.ArrayList;
@@ -82,12 +85,16 @@ public class TestActivity extends AppCompatActivity {
 
     @OnClick(R.id.end_test_button)
     public void endTest(){
-        long timeLeft = timer.getTimeLeft();
+        final long timeLeft = timer.getTimeLeft();
         timer.cancel();
         timer = new TestTimer(timeLeft, 1000);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to quit?");
+        String message = "Are you sure you want to quit?";
+        if (!currentTest.allDone()){
+            message += " You haven't answered all the questions.";
+        }
+        builder.setMessage(message);
         builder.setCancelable(false);
         builder.setPositiveButton(
                 "NO",
@@ -100,7 +107,8 @@ public class TestActivity extends AppCompatActivity {
                 "YES",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        currentResult.evaluateTest(currentTest);
+                        currentResult = new Result();
+                        currentResult.evaluateTest(currentTest, (int) timeLeft/1000);
                         Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                         getBaseContext().startActivity (intent);
                     }

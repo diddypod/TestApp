@@ -30,11 +30,11 @@ public class Question {
             return values;
         }
 
-        public void setChosen() {
-            this.chosen = true;
-        }
         public boolean isCorrect() {
             return isCorrect;
+        }
+        public void setChosen() {
+            this.chosen = true;
         }
     }
 
@@ -89,5 +89,26 @@ public class Question {
         for (Option i: options){
             i.chosen = false;
         }
+    }
+
+    public boolean answeredCorrectly(){
+        for (Option option: options){
+            if (option.isCorrect && option.chosen){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setAnswered() {
+        answered = true;
+    }
+
+    public boolean isAnswered() {
+        return answered;
     }
 }

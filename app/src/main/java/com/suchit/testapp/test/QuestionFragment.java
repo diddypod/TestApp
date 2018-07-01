@@ -51,6 +51,7 @@ public class QuestionFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int optionNumber = radioGroup.indexOfChild(radioGroup.
                         findViewById(radioGroup.getCheckedRadioButtonId()));
+                currentTest.getQuestions().get(questionNumber).setAnswered();
                 currentTest.getQuestions().get(questionNumber).resetOptions();
                 currentTest.getQuestions().get(questionNumber).
                         getOptions().get(optionNumber).setChosen();
