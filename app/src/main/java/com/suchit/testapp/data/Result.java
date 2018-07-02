@@ -137,4 +137,22 @@ public class Result {
     public float getSchoolFullPercentage() {
         return (schoolEnglishPercentage + schoolMathPercentage + schoolSciencePercentage) / 3;
     }
+    public int getFullMarks() {
+        return fullMarks;
+    }
+    public int getEnglishFullMarks() {
+        return englishFullMarks;
+    }
+    public int getMathFullMarks() {
+        return mathFullMarks;
+    }
+    public int getScienceFullMarks() {
+        return scienceFullMarks;
+    }
+    public int getFullTimeSeconds() {
+        return fullTimeSeconds;
+    }
+    public int getTimeLeftSeconds() {
+        return timeLeftSeconds;
+    }
 }

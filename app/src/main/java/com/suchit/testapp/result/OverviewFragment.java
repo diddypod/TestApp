@@ -1,11 +1,14 @@
 package com.suchit.testapp.result;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.github.anastr.speedviewlib.SpeedView;
@@ -34,6 +37,8 @@ public class OverviewFragment extends Fragment {
     TextView performanceLabel;
     @BindView(R.id.performance_radar)
     RadarChart performanceRadar;
+    @BindView(R.id.summary_table)
+    TableLayout summaryTable;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +47,7 @@ public class OverviewFragment extends Fragment {
 
         setMeter();
         setRadar();
+        setSummary();
 
         return view;
     }
@@ -132,5 +138,47 @@ public class OverviewFragment extends Fragment {
             }
         });
         performanceRadar.invalidate();
+    }
+    private void setSummary(){
+        addRow("SCORE:", currentResult.getTotalMarks() + " / " +
+                currentResult.getFullMarks());
+        addRow("MATHS:", currentResult.getMathMarks() + " / " +
+                currentResult.getMathFullMarks());
+        addRow("ENGLISH:", currentResult.getEnglishMarks() + " / " +
+                currentResult.getEnglishFullMarks());
+        addRow("SCIENCE:", currentResult.getScienceMarks() + " / " +
+                currentResult.getScienceFullMarks());
+        int timeUsedSec = currentResult.getFullTimeSeconds()-currentResult.getTimeLeftSeconds();
+        int fullTimeSec = currentResult.getFullTimeSeconds();
+        addRow("TIME TAKEN:", timeUsedSec/60 + ":" +
+                ((timeUsedSec%60+"").length() == 2 ? timeUsedSec%60 : "0" + timeUsedSec%60) +
+                " / " + fullTimeSec/60 + ":" +
+                ((fullTimeSec%60+"").length() == 2 ? fullTimeSec%60 : "0" + fullTimeSec%60));
+    }
+
+    private void addRow (String parameterString, String valueString){
+        TableRow row = new TableRow(getActivity());
+        row.setPadding(5,5,5,5);
+        TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT);
+        row.setLayoutParams(lp);
+
+        TextView parameter = new TextView(getActivity());
+        parameter.setText(parameterString);
+        parameter.setTextSize(15);
+        parameter.setTextColor(ContextCompat.getColor(getActivity(),R.color.black));
+        parameter.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        parameter.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+        parameter.setLayoutParams(new TableRow.LayoutParams(0,TableRow.LayoutParams.WRAP_CONTENT));
+        row.addView(parameter);
+
+        TextView value = new TextView(getActivity());
+        value.setText(valueString);
+        value.setTextSize(15);
+        value.setTextColor(ContextCompat.getColor(getActivity(),R.color.black));
+        value.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+        value.setLayoutParams(new TableRow.LayoutParams(0,TableRow.LayoutParams.WRAP_CONTENT));
+        row.addView(value);
+
+        summaryTable.addView(row);
     }
 }

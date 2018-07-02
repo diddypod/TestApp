@@ -60,7 +60,7 @@ public class ProfileFragment extends Fragment {
         entries.add(new PieEntry(currentResult.getVisualCorrectPercentage(), "Visual"));
         entries.add(new PieEntry(currentResult.getTextCorrectPercentage(), "Textual"));
 
-        PieDataSet dataSet = new PieDataSet(entries, "Learning Profile");
+        PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(ContextCompat.getColor(getActivity(),R.color.red),
                 ContextCompat.getColor(getActivity(),R.color.darkBlue));
         PieData data = new PieData(dataSet);
