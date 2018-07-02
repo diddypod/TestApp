@@ -99,16 +99,16 @@ public class Question {
         }
         return false;
     }
-
     public String getSubject() {
         return subject;
     }
-
     public void setAnswered() {
         answered = true;
     }
-
     public boolean isAnswered() {
         return answered;
+    }
+    public boolean hasImage() {
+        return hasImage;
     }
 }

@@ -25,9 +25,9 @@ public class Test {
     private int grade;
     private int numberAnswered = 0;
 
-    private float mathMarks;
-    private float scienceMarks;
-    private float englishMarks;
+    private float schoolMathMarks;
+    private float schoolScienceMarks;
+    private float schoolEnglishMarks;
 
     private ArrayList<Question> questions = new ArrayList<>();
 
@@ -39,9 +39,9 @@ public class Test {
     }
 
     public void setMarks(float mathMarks, float scienceMarks, float englishMarks) {
-        this.mathMarks = mathMarks;
-        this.scienceMarks = scienceMarks;
-        this.englishMarks = englishMarks;
+        schoolMathMarks = mathMarks;
+        schoolScienceMarks = scienceMarks;
+        schoolEnglishMarks = englishMarks;
     }
 
     public int getGrade() {
@@ -81,5 +81,15 @@ public class Test {
             }
         }
         return true;
+    }
+
+    public float getSchoolEnglishMarks() {
+        return schoolEnglishMarks;
+    }
+    public float getSchoolMathMarks() {
+        return schoolMathMarks;
+    }
+    public float getSchoolScienceMarks() {
+        return schoolScienceMarks;
     }
 }

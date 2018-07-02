@@ -73,13 +73,13 @@
                     android:padding="5dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="10dp"
-                    android:text="Standing:"
+                    android:text="Standing (scores in %):"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
                 <com.github.mikephil.charting.charts.RadarChart
                     android:id="@+id/performance_radar"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="320dp"
                     android:padding="10dp"
                     android:layout_marginBottom="20dp"/>
             </LinearLayout>

@@ -26,6 +26,57 @@
                     android:textAllCaps="true"
                     android:textColor="@color/black"
                     android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Learning Style:"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/profile_pie"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Performance across different approaches (in %):"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/profile_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Aptitude vs School marks:"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/profile_comparison_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp"/>
             </LinearLayout>
         </ScrollView>
     </android.support.v7.widget.CardView>

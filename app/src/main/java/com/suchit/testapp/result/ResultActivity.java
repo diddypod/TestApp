@@ -66,8 +66,6 @@ public class ResultActivity extends AppCompatActivity {
                     return SectionFragment.newInstance();
                 case 2:
                     return ProfileFragment.newInstance();
-                case 3:
-                    return SummaryFragment.newInstance();
                 default:
                     return null;
             }
@@ -75,7 +73,7 @@ public class ResultActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 4;
+            return 3;
         }
     }
 

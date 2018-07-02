@@ -74,25 +74,25 @@ public class OverviewFragment extends Fragment {
         ArrayList<RadarEntry> goodList = new ArrayList<>();
         ArrayList<RadarEntry> badList = new ArrayList<>();
 
-        currentList.add(new RadarEntry(currentResult.getTotalPercentage()/5));
-        currentList.add(new RadarEntry(currentResult.getMathPercentage()/5));
-        currentList.add(new RadarEntry(currentResult.getSciencePercentage()/5));
-        currentList.add(new RadarEntry(currentResult.getEnglishPercentage()/5));
-        currentList.add(new RadarEntry(currentResult.getTimePercentage()/5));
-        goodList.add(new RadarEntry(19));
-        goodList.add(new RadarEntry(19));
-        goodList.add(new RadarEntry(19));
-        goodList.add(new RadarEntry(19));
-        goodList.add(new RadarEntry(10));
-        badList.add(new RadarEntry(7));
-        badList.add(new RadarEntry(7));
-        badList.add(new RadarEntry(7));
-        badList.add(new RadarEntry(7));
-        badList.add(new RadarEntry(10));
+        currentList.add(new RadarEntry(currentResult.getTotalPercentage()));
+        currentList.add(new RadarEntry(currentResult.getMathPercentage()));
+        currentList.add(new RadarEntry(currentResult.getSciencePercentage()));
+        currentList.add(new RadarEntry(currentResult.getEnglishPercentage()));
+        currentList.add(new RadarEntry(currentResult.getTimePercentage()));
+        goodList.add(new RadarEntry(95));
+        goodList.add(new RadarEntry(95));
+        goodList.add(new RadarEntry(95));
+        goodList.add(new RadarEntry(95));
+        goodList.add(new RadarEntry(50));
+        badList.add(new RadarEntry(35));
+        badList.add(new RadarEntry(35));
+        badList.add(new RadarEntry(35));
+        badList.add(new RadarEntry(35));
+        badList.add(new RadarEntry(50));
 
-        RadarDataSet current = new RadarDataSet(currentList, "This test");
-        RadarDataSet good = new RadarDataSet(goodList, "Good");
-        RadarDataSet bad = new RadarDataSet(badList, "Bad");
+        RadarDataSet current = new RadarDataSet(currentList, "Current test");
+        RadarDataSet good = new RadarDataSet(goodList, "Good performance");
+        RadarDataSet bad = new RadarDataSet(badList, "Bad performance");
 
         current.setColor(ContextCompat.getColor(getActivity(),R.color.orange));
         current.setDrawValues(false);
@@ -120,9 +120,8 @@ public class OverviewFragment extends Fragment {
         labels.add("Speed");
 
         performanceRadar.setData(data);
-        performanceRadar.invalidate();
         performanceRadar.setWebLineWidthInner(0.5f);
-        performanceRadar.getYAxis().setAxisMaxValue(20);
+        performanceRadar.getYAxis().setAxisMaxValue(100);
         performanceRadar.getYAxis().setAxisMinimum(0);
         performanceRadar.setRotationEnabled(false);
         performanceRadar.getDescription().setEnabled(false);
@@ -132,5 +131,6 @@ public class OverviewFragment extends Fragment {
                 return labels.get((int)value);
             }
         });
+        performanceRadar.invalidate();
     }
 }

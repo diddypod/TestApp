@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -30,7 +29,6 @@ public class SectionFragment extends Fragment {
 
     @BindView(R.id.section_bar)
     BarChart sectionBar;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -73,15 +71,14 @@ public class SectionFragment extends Fragment {
         BarData data = new BarData(dataSets);
 
         sectionBar.setData(data);
-        sectionBar.invalidate();
         sectionBar.getDescription().setEnabled(false);
-        sectionBar.getXAxis().setValueFormatter(new IAxisValueFormatter() {
+        XAxis xAxis = sectionBar.getXAxis();
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
                 return labels.get((int)value);
             }
         });
-        XAxis xAxis = sectionBar.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(-0.5f);
         xAxis.setAxisMaximum(4.5f);
@@ -91,5 +88,10 @@ public class SectionFragment extends Fragment {
         xAxis.setTextSize(8);
         xAxis.setLabelCount(scoresList.size());
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
+        sectionBar.getAxisLeft().setAxisMaximum(100);
+        sectionBar.getAxisRight().setAxisMaximum(100);
+        sectionBar.getAxisLeft().setAxisMinimum(0);
+        sectionBar.getAxisRight().setAxisMinimum(0);
+        sectionBar.invalidate();
     }
 }

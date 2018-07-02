@@ -18,29 +18,64 @@ public class Result {
     private int fullMarks = 0;
     private int timeLeftSeconds = 0;
     private int fullTimeSeconds = 1200;
+    private int visualCorrect = 0;
+    private int visualFull = 0;
+    private int textCorrect = 0;
+    private int textFull = 0;
+
+    private float schoolSciencePercentage = 0;
+    private float schoolMathPercentage = 0;
+    private float schoolEnglishPercentage = 0;
 
     public void evaluateTest(Test test, int seconds){
         name = test.getName();
         grade = (test.getGrade()+3)+"th";
+        schoolSciencePercentage = test.getSchoolScienceMarks();
+        schoolEnglishPercentage = test.getSchoolEnglishMarks();
+        schoolMathPercentage = test.getSchoolMathMarks();
         timeLeftSeconds = seconds;
         for (Question question: test.getQuestions()){
+            if (question.hasImage()){
+                visualFull++;
+            }
+            else {
+                textFull++;
+            }
             switch (question.getSubject()) {
                 case "math":
                     mathFullMarks++;
                     if (question.answeredCorrectly()) {
                         mathMarks++;
+                        if (question.hasImage()){
+                            visualCorrect++;
+                        }
+                        else {
+                            textCorrect++;
+                        }
                     }
                     break;
                 case "science":
                     scienceFullMarks++;
                     if (question.answeredCorrectly()) {
                         scienceMarks++;
+                        if (question.hasImage()){
+                            visualCorrect++;
+                        }
+                        else {
+                            textCorrect++;
+                        }
                     }
                     break;
                 case "english":
                     englishFullMarks++;
                     if (question.answeredCorrectly()) {
                         englishMarks++;
+                        if (question.hasImage()){
+                            visualCorrect++;
+                        }
+                        else {
+                            textCorrect++;
+                        }
                     }
                     break;
             }
@@ -58,11 +93,6 @@ public class Result {
     }
     public int getTotalMarks() {
         return scienceMarks + mathMarks + englishMarks;
-    }
-    public void setFullMarks(Test test){
-        for (Question question: test.getQuestions()){
-            fullMarks++;
-        }
     }
     public float getTotalPercentage(){
         Log.d("SC",scienceMarks+"");
@@ -86,13 +116,25 @@ public class Result {
     public String getGrade() {
         return grade;
     }
-    public int getTimeLeft() {
-        return timeLeftSeconds;
-    }
-    public int getFullTime() {
-        return fullTimeSeconds;
-    }
     public float getTimePercentage(){
         return ((float) timeLeftSeconds) / ((float) fullTimeSeconds) * 100;
+    }
+    public float getVisualCorrectPercentage() {
+        return ((float) visualCorrect) / ((float) visualFull) * 100;
+    }
+    public float getTextCorrectPercentage() {
+        return ((float) textCorrect) / ((float) textFull) * 100;
+    }
+    public float getSchoolEnglishPercentage() {
+        return schoolEnglishPercentage;
+    }
+    public float getSchoolMathPercentage() {
+        return schoolMathPercentage;
+    }
+    public float getSchoolSciencePercentage() {
+        return schoolSciencePercentage;
+    }
+    public float getSchoolFullPercentage() {
+        return (schoolEnglishPercentage + schoolMathPercentage + schoolSciencePercentage) / 3;
     }
 }

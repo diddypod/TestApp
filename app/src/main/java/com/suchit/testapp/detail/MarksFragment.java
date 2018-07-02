@@ -41,8 +41,6 @@ public class MarksFragment extends Fragment implements View.OnClickListener{
         view = inflater.inflate(R.layout.fragment_marks, container, false);
         ButterKnife.bind(this, view);
 
-        Log.d("N","rhinoceros");
-
         submit.setOnClickListener(this);
 
         return view;

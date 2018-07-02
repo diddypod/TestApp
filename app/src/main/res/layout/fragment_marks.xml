@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Maths"
-                    android:text="80"
+                    android:text="95"
                     android:inputType="numberDecimal" />
             </android.support.design.widget.TextInputLayout>
 
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Science"
-                    android:text="80"
+                    android:text="70"
                     android:inputType="numberDecimal" />
             </android.support.design.widget.TextInputLayout>
 
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="English"
-                    android:text="80"
+                    android:text="85"
                     android:inputType="numberDecimal" />
             </android.support.design.widget.TextInputLayout>
 
