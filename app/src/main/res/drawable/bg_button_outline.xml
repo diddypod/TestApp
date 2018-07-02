@@ -8,10 +8,7 @@
             <solid
                 android:color="@color/lightBlue" />
             <corners
-                android:bottomLeftRadius="4dp"
-                android:bottomRightRadius="4dp"
-                android:topLeftRadius="4dp"
-                android:topRightRadius="4dp" />
+                android:radius="4dp" />
         </shape>
     </item>
 
@@ -24,10 +21,7 @@
             <solid
                 android:color="@android:color/transparent" />
             <corners
-                android:bottomLeftRadius="4dp"
-                android:bottomRightRadius="4dp"
-                android:topLeftRadius="4dp"
-                android:topRightRadius="4dp" />
+                android:radius="4dp" />
         </shape>
     </item>
 
@@ -40,10 +34,7 @@
             <solid
                 android:color="@android:color/transparent" />
             <corners
-                android:bottomLeftRadius="4dp"
-                android:bottomRightRadius="4dp"
-                android:topLeftRadius="4dp"
-                android:topRightRadius="4dp" />
+                android:radius="4dp" />
         </shape>
     </item>
 </selector>

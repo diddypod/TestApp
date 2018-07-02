@@ -27,9 +27,4 @@ public class LandingActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DetailsActivity.class);
         startActivity (intent);
     }
-
-    @OnClick(R.id.view_results_button)
-    public void onResultsClicked(){
-    }
-
 }
