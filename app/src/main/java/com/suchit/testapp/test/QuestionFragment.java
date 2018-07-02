@@ -71,7 +71,7 @@ public class QuestionFragment extends Fragment {
     }
 
     private void inflateQuestion(ArrayList<String> values){
-        question.setText(values.get(0) + ": " + values.get(1));
+        question.setText(values.get(1));
         if (values.get(2).equals("true")){
             questionImage.setVisibility(View.VISIBLE);
             questionImage.setImageDrawable(ContextCompat.getDrawable(getActivity(),

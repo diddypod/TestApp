@@ -76,5 +76,4 @@ public class ResultActivity extends AppCompatActivity {
             return 3;
         }
     }
-
 }
