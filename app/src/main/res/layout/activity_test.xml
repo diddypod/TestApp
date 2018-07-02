@@ -10,7 +10,7 @@
             android:id="@+id/test_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/blue"
+            android:background="@color/darkBlue"
             android:elevation="4dp">
             <ImageButton
                 android:id="@+id/pause_button"
@@ -55,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:elevation="2dp"
             app:tabMode="scrollable"
             app:tabGravity="center"
             app:tabMinWidth="100dp"

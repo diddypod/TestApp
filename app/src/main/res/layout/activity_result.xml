@@ -14,9 +14,11 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+        android:paddingTop="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@color/blue">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -26,12 +28,14 @@
                 android:layout_height="wrap_content"
                 android:text="NAME:"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
             <TextView
                 android:id="@+id/name_result"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout
@@ -43,12 +47,14 @@
                 android:layout_height="wrap_content"
                 android:text="GRADE:"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
             <TextView
                 android:id="@+id/grade_result"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>

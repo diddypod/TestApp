@@ -9,6 +9,7 @@
         <item name="actionMenuTextColor">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
         <item name="android:statusBarColor">@color/darkBlue</item>
+        <item name="android:fontFamily">@font/montserrat</item>
     </style>
 
     <style name="InputLayoutTheme" parent="AppTheme">

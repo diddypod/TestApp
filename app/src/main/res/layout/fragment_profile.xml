@@ -3,81 +3,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <android.support.v7.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="15dp"
-        app:cardCornerRadius="4dp">
-        <ScrollView
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/profile_text"
-                    android:layout_width="wrap_content"
+                android:layout_margin="30dp"
+                app:cardCornerRadius="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Section 3 - Learning profile"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="18sp"
-                    android:padding="5dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Learning Style:"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/profile_pie"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:padding="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="20dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="18sp"
-                    android:padding="5dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Performance across different approaches (in %):"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/profile_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:padding="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="20dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="18sp"
-                    android:padding="5dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Aptitude vs School marks (scores in %):"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/profile_comparison_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:padding="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="20dp"/>
-            </LinearLayout>
-        </ScrollView>
-    </android.support.v7.widget.CardView>
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/profile_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Section 3 - Learning profile"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:padding="5dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Learning Style:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/profile_pie"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:padding="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:padding="5dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Performance across different approaches (in %):"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/profile_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:padding="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="18sp"
+                        android:padding="5dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Aptitude vs School marks (scores in %):"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/profile_comparison_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:padding="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

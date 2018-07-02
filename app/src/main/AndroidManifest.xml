@@ -19,7 +19,8 @@
         <activity
             android:name=".detail.DetailsActivity"
             android:label="Enter Details"
-            android:parentActivityName=".LandingActivity" />
+            android:parentActivityName=".LandingActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ReadyActivity"
             android:label="Ready"

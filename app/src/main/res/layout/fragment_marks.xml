@@ -1,94 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <android.support.v7.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:layout_margin="25dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:background="@color/darkBlue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"/>
+    </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         app:cardCornerRadius="4dp">
 
-        <RelativeLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/enter_details"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="Enter School Marks"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:layout_height="match_parent">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/maths_marks_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/enter_details"
-                android:layout_margin="10dp"
-                android:theme="@style/InputLayoutTheme"
-                app:errorTextAppearance="@color/red">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/maths_marks"
+                <TextView
+                    android:id="@+id/enter_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Maths"
-                    android:inputType="numberDecimal" />
-            </android.support.design.widget.TextInputLayout>
+                    android:padding="20dp"
+                    android:text="Enter School Marks"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/science_marks_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/maths_marks_layout"
-                android:layout_margin="10dp"
-                android:theme="@style/InputLayoutTheme"
-                app:errorTextAppearance="@color/red">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/science_marks"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/maths_marks_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Science"
-                    android:inputType="numberDecimal" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_below="@id/enter_details"
+                    android:layout_margin="10dp"
+                    android:theme="@style/InputLayoutTheme"
+                    app:errorTextAppearance="@color/red">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/english_marks_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/science_marks_layout"
-                android:layout_margin="10dp"
-                android:theme="@style/InputLayoutTheme"
-                app:errorTextAppearance="@color/red">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/maths_marks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Maths"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/english_marks"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/science_marks_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="English"
-                    android:inputType="numberDecimal" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_below="@id/maths_marks_layout"
+                    android:layout_margin="10dp"
+                    android:theme="@style/InputLayoutTheme"
+                    app:errorTextAppearance="@color/red">
 
-            <Button
-                android:id="@+id/submit_marks"
-                android:layout_alignParentBottom="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:background="@drawable/bg_button_outline"
-                android:textColor="@color/darkBlue"
-                android:text="Submit"/>
-        </RelativeLayout>
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/science_marks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Science"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/english_marks_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/science_marks_layout"
+                    android:layout_margin="10dp"
+                    android:theme="@style/InputLayoutTheme"
+                    app:errorTextAppearance="@color/red">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/english_marks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="English"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/submit_marks"
+                    android:layout_below="@id/english_marks_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:background="@drawable/bg_button_outline"
+                    android:textColor="@color/darkBlue"
+                    android:text="Submit"/>
+            </RelativeLayout>
+        </ScrollView>
     </android.support.v7.widget.CardView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-</LinearLayout>
+</RelativeLayout>

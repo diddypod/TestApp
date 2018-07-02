@@ -50,7 +50,6 @@ public class ResultActivity extends AppCompatActivity {
         grade.setText(currentResult.getGrade());
     }
 
-
     private class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private ViewPagerAdapter(FragmentManager fragmentManager) {

@@ -69,7 +69,7 @@ public class OverviewFragment extends Fragment {
             performanceLabel.setText("Average");
         }
         else if (percentage >= 60 && percentage < 80){
-            performanceLabel.setText("goodList");
+            performanceLabel.setText("Good");
         }
         else if (percentage >= 80 && percentage < 100){
             performanceLabel.setText("Outstanding");
