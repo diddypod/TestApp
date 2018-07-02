@@ -1,7 +1,5 @@
 package com.suchit.testapp.data;
 
-import android.util.Log;
-
 public class Result {
     
     public static Result currentResult;
@@ -95,9 +93,6 @@ public class Result {
         return scienceMarks + mathMarks + englishMarks;
     }
     public float getTotalPercentage(){
-        Log.d("SC",scienceMarks+"");
-        Log.d("MA",mathMarks+"");
-        Log.d("EN",englishMarks+"");
         return ((float) (scienceMarks + mathMarks + englishMarks)) / ((float) fullMarks) * 100;
     }
     public float getSciencePercentage(){

@@ -39,7 +39,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Student Name"
-                    android:text="S K"
                     android:inputType="text|textPersonName" />
             </android.support.design.widget.TextInputLayout>
 
@@ -65,7 +64,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Parents' email"
-                    android:text="a.b@c.com"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
@@ -83,7 +81,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Parents' Number"
-                    android:text="1122334455"
                     android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 

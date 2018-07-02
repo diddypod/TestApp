@@ -2,7 +2,6 @@ package com.suchit.testapp.data;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -65,7 +64,6 @@ public class Test {
             JsonParser parser = new JsonParser();
             return parser.parse(new InputStreamReader(is)).getAsJsonObject();
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage(), e);
         }
         return null;
     }
